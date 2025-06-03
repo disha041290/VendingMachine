@@ -22,7 +22,7 @@ class Program
             {
                 case "1":
                     Console.WriteLine("Enter coin (nickel, dime, quarter, penny): ");
-                    string coinInput = Console.ReadLine()?.ToLower();
+                    string coinInput = (Console.ReadLine() ?? "").ToLower();
                     Coin coin = coinInput switch
                     {
                         "nickel" => new Coin(5.0m, 21.21m),
@@ -37,7 +37,7 @@ class Program
 
                 case "2":
                     Console.WriteLine("Enter product (cola, chips, candy): ");
-                    string product = Console.ReadLine();
+                    string product = Console.ReadLine() ?? string.Empty;
                     var result = vendingMachine.SelectProduct(product);
                     if (result != null)
                     {

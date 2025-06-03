@@ -3,7 +3,7 @@
 public class VendingMachineRepository : IVendingMachineRepository
 {
     private decimal _amount;
-    private string _lastMessage;
+    private string _lastMessage =  "INSERT COIN";
     private bool _justDispensed;
     private bool _showPrice = false;
     private string _priceMessage = string.Empty;
@@ -81,7 +81,7 @@ public class VendingMachineRepository : IVendingMachineRepository
         // Show price once
         _showPrice = true;
         _priceMessage = $"PRICE: {product.Price.ToString("C", CultureInfo.CreateSpecificCulture("en-US"))}";
-        return null;
+        return string.Empty;
     }
 
 
